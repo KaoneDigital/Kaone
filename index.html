@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaone Digital Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f8f3f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header and Hero Section */
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Collaboration+Image') no-repeat center center/cover;
+            filter: blur(0px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 43, 145, 0.7); /* Navy blue with opacity */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e96f31;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #2fc7e4;
+            transform: scale(1.05);
+        }
+
+        /* Parallax Effect */
+        header {
+            background-attachment: fixed;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            color: #0a2b91;
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            color: #e96f31;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #0a2b91;
+            margin-bottom: 10px;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose-us {
+            padding: 60px 20px;
+            background: #0a2b91;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #why-choose-us::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #f8f3f5;
+            transform: skewY(-5deg);
+            z-index: 0;
+        }
+
+        #why-choose-us .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background: #e96f31;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+        }
+
+        .fa-whatsapp {
+            color: #2fc7e4;
+        }
+
+        .fa-envelope {
+            color: #0a2b91;
+        }
+
+        /* Floating WhatsApp Icon */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #128c7e;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            color: #fff;
+            font-size: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a2b91;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h4 {
+                font-size: 28px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                height: 60vh;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Kaone Digital Services</h1>
+            <p class="tagline">Your Digital Journey, Our Expertise</p>
+            <a href="#contact" class="cta-btn">Get Started</a>
+        </div>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>CV Writing</h3>
+                <p>Professional CVs tailored to showcase your skills and experience.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Cover Letter Writing</h3>
+                <p>Compelling cover letters to make a strong first impression.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Create Posters</h3>
+                <p>Eye-catching posters designed to promote your brand or event.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-at"></i>
+                <h3>Email Services</h3>
+                <p>Efficient email setup and management for your business.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-signature"></i>
+                <h3>Help with Applications</h3>
+                <p>Expert assistance to complete applications successfully.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="content">
+            <h4>Why Choose Us</h4>
+            <p>We offer the best digital services at affordable prices, ensuring quality and satisfaction for every client.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us Now</h2>
+        <div class="contact-container">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/27717414011?text=Hello%20Kaone%20Digital%20Services.%20%F0%9F%98%8A%0AI%20am%20we%20interested%20in%20one%20of%20your%20services" target="_blank" style="color: #fff; text-decoration: none;">071 741 4011</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:oatiledanger3105@gmail.com" style="color: #fff; text-decoration: none;">oatiledanger3105@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/27717414011?text=Hello%20Kaone%20Digital%20Services.%20%F0%9F%98%8A%0AI%20am%20we%20interested%20in%20one%20of%20your%20services" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>© 2025 Kaone Digital Services. All rights  reserved.</p>
+    </footer>
+</body>
+</html>
